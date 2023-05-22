@@ -34,7 +34,7 @@
 .nav-links a.active {
   background: #f8df00; 
   color: #292929; 
-  border-bottom:3px white solid;
+  border-bottom:5px white solid;
 }
 
 .nav-links button {

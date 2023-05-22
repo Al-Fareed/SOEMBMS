@@ -23,6 +23,7 @@ function App() {
           <Route path="/Contact" exact>
             <Contact />
           </Route>
+          <Redirect to="/" />
         </Switch>
       </Router>
     </main>
