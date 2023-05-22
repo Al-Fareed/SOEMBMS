@@ -1,21 +1,23 @@
-import React from 'react';
-import './NavLinks.css'
-// import { NavLink } from 'react-router-dom/cjs/react-router-dom';
+import React from "react";
+import "./NavLinks.css";
+import { NavLink } from 'react-router-dom/cjs/react-router-dom';
 const NavLinks = () => {
   return (
-    <ul className='nav-links'>
-        <li>
-            <a href='' >HOME</a>
-        </li>
-        <li>
-            <a href='#'>ABOUT</a>
-        </li>
-        <li>
-            <a href='#'>LOGOUT</a>
-            
-        </li>
+    <ul className="nav-links">
+      <li>
+        <NavLink to="/" exact>HOME</NavLink>
+      </li>
+      <li>
+        <NavLink to="/About">ABOUT</NavLink>
+      </li>
+      <li>
+        <NavLink to="/Contact">CONTACT</NavLink>
+      </li>
+      <li>
+        <NavLink to="/Logout">LOGOUT</NavLink>
+      </li>
     </ul>
-  )
-}
+  );
+};
 
-export default NavLinks
+export default NavLinks;
