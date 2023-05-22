@@ -1,9 +1,9 @@
 import React from "react";
 import Chart from "react-apexcharts";
 import './Chart.css'
-import { useState } from "react";
+// import { useState } from "react";
 const Charts = () => {
-  const [state, setState] = useState({
+  const state = {
     options: {
       chart: {
         id: "basic-bar",
@@ -18,7 +18,7 @@ const Charts = () => {
         data: [30, 40, 45, 50, 49, 60, 70, 91],
       },
     ],
-  });
+  }
   return (
     <div className="chart-container">
       <Chart
