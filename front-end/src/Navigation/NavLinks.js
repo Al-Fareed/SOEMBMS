@@ -8,10 +8,10 @@ const NavLinks = () => {
         <NavLink to="/" exact>HOME</NavLink>
       </li>
       <li>
-        <NavLink to="/About">ABOUT</NavLink>
+        <NavLink to="/Sell">SELL</NavLink>
       </li>
       <li>
-        <NavLink to="/Contact">CONTACT</NavLink>
+        <NavLink to="/Buy">BUY</NavLink>
       </li>
       <li>
         <NavLink to="/Logout">LOGOUT</NavLink>
