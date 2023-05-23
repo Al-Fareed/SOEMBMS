@@ -5,7 +5,7 @@ const MainNavigation = () => {
   return (
     <MainHeader>
       <h1 className="main-navigation__title">
-        Hello
+        Electricity billing and Management
       </h1>
       <nav className='main-navigation__header-nav'>
         <NavLinks/>
