@@ -4,9 +4,9 @@ import NavLinks from './NavLinks';
 const MainNavigation = () => {
   return (
     <MainHeader>
-      <h1 className="main-navigation__title">
-        Electricity billing and Management
-      </h1>
+      <h2 className="main-navigation__title">
+        Electricity Billing and Management
+      </h2>
       <nav className='main-navigation__header-nav'>
         <NavLinks/>
       </nav>
