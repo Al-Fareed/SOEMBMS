@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 import MainNavigation from "./Navigation/MainNavigation";
 import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
+import Buy from "./Pages/Buy";
+import Sell from "./Pages/Sell";
 function App() {
   return (
     <main>
@@ -17,11 +17,11 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/About" exact>
-            <About />
+          <Route path="/Sell" exact>
+            <Sell />
           </Route>
-          <Route path="/Contact" exact>
-            <Contact />
+          <Route path="/Buy" exact>
+            <Buy />
           </Route>
           <Redirect to="/" />
         </Switch>
