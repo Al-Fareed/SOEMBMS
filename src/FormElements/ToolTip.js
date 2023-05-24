@@ -1,9 +1,10 @@
 import React from 'react'
-
+import './ToolTip.css'
 const ToolTip = (props) => {
   return (
-    <div className='tip'>
-      {props.message}
+    <div className='tooltip'>
+      <i class="fa-regular fa-lightbulb"></i>
+      <span class="tooltiptext">{props.message}</span>
     </div>
   )
 }
