@@ -37,7 +37,6 @@ body {
     text-transform: capitalize;
     width: 49%;
     margin-top: 10px;
-    margin-left: 8px;
   }
   h3{
     color: black;
@@ -50,3 +49,7 @@ body {
  ToolTip{
   margin-top:2px;
  }
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
