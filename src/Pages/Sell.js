@@ -6,6 +6,7 @@ const Sell = () => {
     <div class="container">
       <form>
         <h3>Sell Electricity</h3>
+        <i class="bi bi-lightbulb"></i>
         <Input type="text" placeholder="Name" id="name"  />
         <Input type="email" placeholder="E-mail" id="email"  />
         <Input type="number" placeholder="Phone Number" id="phone"  />
