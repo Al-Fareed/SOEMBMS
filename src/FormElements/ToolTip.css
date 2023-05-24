@@ -10,19 +10,18 @@
     visibility: hidden;
     width: 120px;
     background-color: rgba(0, 0, 0, 0.649);
-    color: #fff;
+    color: #666565;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-  
+    background-color: rgba(255, 255, 0, 0.482);
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
+    font-family: product-sans;
+    border: 2px solid yellow;
   }
   
   .tooltip:hover .tooltiptext {
     visibility: visible;
-  }
-  .tooltip:hover{
-    color: yellow;
   }
