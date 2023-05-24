@@ -1,0 +1,45 @@
+input {
+    width: 100%;
+    padding: 15px;
+    height: 45px;
+    font-size: medium;
+    margin-top: 20px ;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-family: Raleway;
+}
+input:focus,textarea:focus {
+    outline: 0;
+    border:2px solid #f8df00;
+  }
+textarea {
+    width: 100%;
+    font-family: Raleway;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: medium;
+    margin-top: 20px ;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.input-container {
+    position: relative;
+  }
+  label {
+    position: absolute;
+    left: 0.8em;
+    top:10px;
+    background-color: white;
+    padding: 0 5px;
+    color: black;
+    font-family: Ralewayu;
+  }

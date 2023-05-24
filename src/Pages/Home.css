@@ -1,0 +1,8 @@
+.chart-container{
+    background-color: white;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border-radius: 5px;
+}
