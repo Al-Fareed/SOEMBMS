@@ -8,7 +8,7 @@ const Sell = () => {
     console.log("Submitted");
   };
   return (
-    <div class="container">
+    <div className="container">
       <form onSubmit={submitHandler}>
         <div className="form-header">
           <h3>Sell Electricity</h3>
