@@ -1,49 +1,51 @@
-import React from "react";
+import React ,{useState} from "react";
+import { Link } from "react-router-dom";
 import "./MainNavigation.css";
-import { NavLink } from "react-router-dom/cjs/react-router-dom";
-const MainHeader = (props) => {
+import NavLinks from "./NavLinks"; // importing NavLinks to substitute here
+import MainHeader from "./MainHeader";
+import SideDrawer from "./SideDrawer";
+import Backdrop from "../Pages/UIElements/Backdrop";
+const MainNavigation = (props) => {
+  const [drawerIsOpen,setDrawerIsOpen] = useState(false); //Holds a value that whether the side Navigation is open or not 
+
+  const openDrawerHandler = ()=>{  
+    //This function is triggered when side nav bar is clicked and made visible
+    setDrawerIsOpen(true); 
+  }
+
+  const closeDrawerHandler = () =>{
+    setDrawerIsOpen(false); //To close the drawer when touched outside the drawer
+  }
   return (
-    <header className="main-header">
-      <div className="head">
-        <h2>Electricity Billing and Management</h2>
-      </div>
-      <div className="nav-links-container">
-        <ul className="nav-links">
-          <li>
-            <NavLink to="/" exact>
-              HOME
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/Sell" exact>
-              SELL
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/Buy" exact>
-              BUY
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/login" exact>
-              LOGIN
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-      <div className="dropdown mob-nav">
-        <button class="dropbtn">
-          <i className="fa-sharp fa-solid fa-bars"></i>
+    <React.Fragment>
+      {drawerIsOpen && <Backdrop onClick={closeDrawerHandler}/>} 
+      {/** This element is used to just wrap the other two element, 
+       * and calls function to close drawer on event of onclick which passed from sideDrawer to this component
+       * (this component sends close function to SideDrawer  */}
+     
+     <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
+        <nav className="main-navigation__drawer-nav">
+          <NavLinks />
+        </nav>
+      </SideDrawer> 
+
+      <MainHeader>
+        {/* menu button displayed in mobile view */}
+        <button className="main-navigation__menu-btn" onClick={openDrawerHandler}>
+          <span />
+          <span />
+          <span />
         </button>
-        <div className="dropdown-content">
-          <li><NavLink to="/" exact>HOME</NavLink></li>
-          <li><NavLink to="/Sell" exact>SELL</NavLink></li>
-          <li><NavLink to="/Buy" exact>BUY</NavLink></li>
-          <li><NavLink to="/login" exact>LOGIN</NavLink></li>
-        </div>
-      </div>
-    </header>
+        {/* menu button ends */}
+        <h1 className="main-navigation__title">
+          <Link to="/">Your Places</Link>
+        </h1>
+        <nav className="main-navigation__header-nav">
+          <NavLinks />
+        </nav>
+      </MainHeader>
+    </React.Fragment>
   );
 };
 
-export default MainHeader;
+export default MainNavigation;
