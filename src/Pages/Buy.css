@@ -3,14 +3,20 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 3px 3px 3px 3px rgba(76, 76, 76, 0.822);
+  /* box-shadow: 3px 3px 3px 3px rgba(76, 76, 76, 0.822); */
   background-color: white;
   padding: 10px;
   margin: 9px 0px 9px 0;
   border-radius: 4px;
 }
-
-.user-container h2,
+.user-container:hover{
+    background-color: #f8df00;
+}
+.buy-page{
+    margin-top:7rem;
+    font-family: Raleway;
+}
+.user-container h3,
 .user-container p {
   flex-basis: 25%; /* Distribute contents evenly in 4 columns */
   text-align: center;
@@ -27,16 +33,17 @@
 }
 
 @media only screen and (max-width: 768px) {
+  
   .user-container {
     flex-direction: column;
     align-items: center;
   }
-
-  .user-container h2,
+  .user-container h3,
   .user-container p,
   .btn-container {
     flex-basis: 100%;
     text-align: center;
+    font-weight:bold ;
   }
 
   .btn-container button {
@@ -45,12 +52,13 @@
 }
 
 .heading {
-    position:sticky;
+  position: fixed;
+  top: 3rem;
   left: 0;
   width: 100%;
   background-color: #ffffff;
   color: rgb(0, 0, 0);
-  padding: 1rem;
+  padding-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,4 +70,29 @@
   text-align: center;
   font-size: medium;
   font-weight: bold;
+}
+@media (max-width: 768px) {
+    .heading {
+        display: none;
+      }
+      .buy-page{
+        margin-top:0;
+    }
+}
+.btn-1{
+    background-color: #4CAF50;
+}
+.btn-2{
+    background-color: #FF6D60;
+}
+.btn-1,.btn-2{
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }

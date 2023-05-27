@@ -5,57 +5,57 @@ const Buy = () => {
     {
       name: "Mark",
       Phone: "7348842781",
-      Address: "Washington",
+      City: "Washington",
       units: 230,
     },
     {
-      name: "Zuckerberg",
+      name: "Jack",
       Phone: "8217789463",
-      Address: "Mala",
-      units: 580,
+      City: "Mala",
+      units: 50,
     },
     {
-      name: "Zuckerberg",
+      name: "Mukesha",
       Phone: "8217789463",
-      Address: "Mala",
-      units: 580,
+      City: "Udupi",
+      units: 320,
     },
     {
-      name: "Zuckerberg",
+      name: "Birla",
       Phone: "8217789463",
-      Address: "Mala",
-      units: 580,
+      City: "Manipal",
+      units: 315,
     },
     {
-      name: "Zuckerberg",
+      name: "TATA",
       Phone: "8217789463",
-      Address: "Mala",
-      units: 580,
+      City: "Bangalore",
+      units: 250,
     },
     {
-      name: "Zuckerberg",
+      name: "Andrew Tate",
       Phone: "8217789463",
-      Address: "Mala",
-      units: 580,
+      City: "Karla",
+      units: 600,
     },
     
   ];
   return (
-    <div>
+    <div className="buy-page">
       <div className="heading">
         <p>Name</p>
-        <p>Address</p>
+        <p>City</p>
         <p>Units</p>
         <p>Action</p>
       </div>
       {sellers.map((seller) => (
         <div className="user-container">
-          <h2>{seller.name}</h2>
-          <p>{seller.Address}</p>
+          <h3>{seller.name}</h3>
+          <p>{seller.City}</p>
           <p>{seller.units} units</p>
           <div className="btn-container">
-            <button>View</button>
-            <button>Request</button>
+            <button className="btn-1">View</button>
+            <button className="btn-2">Apply</button>
           </div>
         </div>
       ))}

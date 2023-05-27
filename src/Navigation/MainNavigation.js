@@ -38,7 +38,7 @@ const MainNavigation = (props) => {
         </button>
         {/* menu button ends */}
         <h1 className="main-navigation__title">
-          <Link to="/">Your Places</Link>
+          <Link to="/">Electricity Billing and Management</Link>
         </h1>
         <nav className="main-navigation__header-nav">
           <NavLinks />
