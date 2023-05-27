@@ -46,8 +46,10 @@
     font-weight:bold ;
   }
 
-  .btn-container button {
+  .btn-container{
     margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
   }
 }
 
