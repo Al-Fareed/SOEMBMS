@@ -39,14 +39,15 @@ const Home = () => {
         <Charts categories={years} data={unitsPerYear} />
       </div>
       <div className="monthly-chart">
-        <div>
-          Select year:&nbsp;
+        <div className="year-container">
+          Select the year:&nbsp;
           <select name="" id="">
             {reversedYear.map((year)=>(
               <option value={year}>{year}</option>
             ))}
           </select>
         </div>
+        <hr />
         <Charts categories={month} data={y2001} />
       </div>
     </div>

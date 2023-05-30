@@ -27,3 +27,16 @@
         height: fit-content;
     }
 }
+.year-container{
+    font-family: Ralewayu;
+    padding-left: 10px;
+}
+.year-container select
+{
+    padding: 5px;
+}
+ option{
+    background-color: white;
+    padding: 10px;
+    border-radius: 0px;
+}
