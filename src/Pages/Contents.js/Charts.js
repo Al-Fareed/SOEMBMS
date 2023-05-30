@@ -14,7 +14,7 @@ const Charts = (props) => {
     },
     series: [
       {
-        name: "series-1",
+        name: "units",
         data: props.data,
       },
     ],
