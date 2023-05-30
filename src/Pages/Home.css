@@ -1,8 +1,11 @@
-.chart-container{
+.home{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.monthly-chart, .yearly-chart{
     background-color: white;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
     border-radius: 5px;
+    padding: 10px;
+    height: fit-content;
 }

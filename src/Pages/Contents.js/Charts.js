@@ -1,10 +1,34 @@
-import React from 'react'
-const Charts = () => {
+import React from "react";
+import Chart from "react-apexcharts";
+import './Chart.css'
+// import { useState } from "react";
+const Charts = (props) => {
+  const state = {
+    options: {
+      chart: {
+        id: "basic-bar",
+      },
+      xaxis: {
+        categories: props.categories,
+      },
+    },
+    series: [
+      {
+        name: "series-1",
+        data: props.data,
+      },
+    ],
+  }
   return (
-    <div>
-      Chart
+    <div className="chart-container">
+      <Chart
+              options={state.options}
+              series={state.series}
+              type="line"
+              width="500"
+            />
     </div>
-  )
-}
+  );
+};
 
-export default Charts
+export default Charts;
