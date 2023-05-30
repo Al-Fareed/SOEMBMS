@@ -1,11 +1,29 @@
-.home{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+@media (min-width: 1115px) {
+    .home{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .monthly-chart, .yearly-chart{
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        height: fit-content;
+    }
 }
-.monthly-chart, .yearly-chart{
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    height: fit-content;
+@media (max-width: 1115px) {
+    .home{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .monthly-chart{
+        margin-top: 10px;
+    }
+    .monthly-chart, .yearly-chart{
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        height: fit-content;
+    }
 }
