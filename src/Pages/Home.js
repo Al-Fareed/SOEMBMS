@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Charts from "./Contents.js/Charts";
+import Gauge from "./Contents.js/Gauge";
 import "./Home.css";
-
 const Home = () => {
   const [loggedIn] = useState(true);
   const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -34,13 +34,17 @@ const Home = () => {
   const selectedYearValues = years.find((item) => item.year === parseInt(selectedYear))?.values || [];
 
   // to calculate total units in each year
+  let sumForAvg=0;
+  let avgUnitsPerMonth;
   const unitsPerYear = years.map((yearData) => {
     const sum = yearData.values.reduce((accumulator, value) => accumulator + value, 0);
-    return sum;
-  });
+     sumForAvg = sum + sumForAvg;
+     avgUnitsPerMonth = sumForAvg/((years.length)*12);
+     return sum;
+    });
+    console.log('average units per month', avgUnitsPerMonth);
   
-  
-
+ 
   return (
     <div className="home">
       {!loggedIn && (
@@ -66,6 +70,13 @@ const Home = () => {
         <hr />
         <Charts categories={month} data={selectedYearValues} />
       </div>
+      <div className="avgUnitsPerMon">
+          {/* {Math.round(avgUnitsPerMonth)} units
+        <h2>Average Units per Month </h2> */}
+        <Gauge/>
+          
+      </div>
+      
     </div>
   );
 };
