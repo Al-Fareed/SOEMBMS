@@ -71,10 +71,10 @@ const Home = () => {
         <Charts categories={month} data={selectedYearValues} />
       </div>
       <div className="avgUnitsPerMon">
-          {/* {Math.round(avgUnitsPerMonth)} units
-        <h2>Average Units per Month </h2> */}
-        <Gauge/>
           
+        <Gauge/>
+        <h3>{Math.round(avgUnitsPerMonth)} units</h3>
+        <h2>Average Units per Month </h2>
       </div>
       
     </div>
