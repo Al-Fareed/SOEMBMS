@@ -5,9 +5,7 @@ import "./Home.css";
 const Home = () => {
   const [loggedIn] = useState(true);
   const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const year = [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012];
 
-  const reversedYear = [...year].reverse();
  
   const years = [
     { year: 2001, values: [457, 407, 446, 280, 399, 412, 290, 326, 226, 356, 453, 420] },
@@ -23,6 +21,7 @@ const Home = () => {
     { year: 2011, values: [166, 265, 294, 242, 212, 192, 199, 180, 298, 279, 305, 285] },
     { year: 2012, values: [416, 195, 308, 239, 182, 504, 187, 437, 382, 491, 317, 204] },
   ];
+  const reversedYear = years.map((item) => item.year).reverse();
   const lastYear = years[years.length - 1].year;
 
   const [selectedYear, setSelectedYear] = useState(lastYear);
@@ -51,7 +50,7 @@ const Home = () => {
         </div>
       )}
       <div className="yearly-chart">
-        <Charts categories={year} data={unitsPerYear} />
+        <Charts categories={years.map((item)=>item.year)} data={unitsPerYear} />
       </div>
       <div className="monthly-chart">
         <div className="year-container">
