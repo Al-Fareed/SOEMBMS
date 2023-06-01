@@ -28,24 +28,36 @@ const Home = () => {
   const handleYearChange = (event) => {
     setSelectedYear(event.target.value);
   };
-  // to the values of last arrays last values, representing previous month units consumed 
-  const thisYearValues = years.find((item)=> item.year === currentYear)?.values || [];
-  const unitsConsumedLastMon = thisYearValues[thisYearValues.length-1];
-  
-  const nameOfMonth = thisYearValues.length === 1 ? 'Jan'
-                      : thisYearValues.length === 2 ? 'Feb'
-                      : thisYearValues.length === 3 ? 'Mar'
-                      : thisYearValues.length === 4 ? 'Apr'
-                      : thisYearValues.length === 5 ? 'May'
-                      : thisYearValues.length === 6 ? 'Jun'
-                      : thisYearValues.length === 7 ? 'Jul'
-                      : thisYearValues.length === 8 ? 'Aug'
-                      : thisYearValues.length === 9 ? 'Sep'
-                      : thisYearValues.length === 10 ? 'Oct'
-                      : thisYearValues.length === 11 ? 'Nov'
-                      : 'Dec';
-console.log('Month', nameOfMonth);
+  // to the values of last arrays last values, representing previous month units consumed
+  const thisYearValues =
+    years.find((item) => item.year === currentYear)?.values || [];
+  const unitsConsumedLastMon = thisYearValues[thisYearValues.length - 1];
 
+  const nameOfMonth =
+    thisYearValues.length === 1
+      ? "Jan"
+      : thisYearValues.length === 2
+      ? "Feb"
+      : thisYearValues.length === 3
+      ? "Mar"
+      : thisYearValues.length === 4
+      ? "Apr"
+      : thisYearValues.length === 5
+      ? "May"
+      : thisYearValues.length === 6
+      ? "Jun"
+      : thisYearValues.length === 7
+      ? "Jul"
+      : thisYearValues.length === 8
+      ? "Aug"
+      : thisYearValues.length === 9
+      ? "Sep"
+      : thisYearValues.length === 10
+      ? "Oct"
+      : thisYearValues.length === 11
+      ? "Nov"
+      : "Dec";
+  console.log("Month", nameOfMonth);
 
   const selectedYearValues =
     years.find((item) => item.year === parseInt(selectedYear))?.values || [];
@@ -61,15 +73,15 @@ console.log('Month', nameOfMonth);
     return sum;
   });
   const avgUnitsPerMonth = Math.round(sumForAvg / (years.length * 12));
-  
+
   return (
     <div className="home">
-      {!loggedIn && 
+      {!loggedIn && (
         <div className="applyLink">
           Request for Smart meter
           <button className="smart-meter-button">Apply</button>
         </div>
-      }
+      )}
       <div className="yearly-chart">
         <Charts
           categories={years.map((item) => item.year)}
@@ -91,9 +103,7 @@ console.log('Month', nameOfMonth);
         <Charts categories={month} data={selectedYearValues} />
       </div>
       <div className="avgUnitsPerMon">
-        <Gauge
-        value={avgUnitsPerMonth} 
-        />
+        <Gauge value={avgUnitsPerMonth} />
         <h3>{avgUnitsPerMonth} units</h3>
         <hr />
         <h2>Average Units per Month </h2>
@@ -102,13 +112,15 @@ console.log('Month', nameOfMonth);
       <div className="lastMonth">
         <h2>Units Consumed Last Month</h2>
         <hr />
-          <h1><i class="fa fa-calendar" aria-hidden="true"></i> {nameOfMonth}</h1>
-          <h1>{unitsConsumedLastMon} units</h1> 
-          <hr />
-          <div className="paymentButton">
-            <button className="view-bill">VIEW BILL</button>
-            {!paymentStatus && <button className="Pay">PAY BILL</button>}
-          </div>
+        <h1>
+          <i class="fa fa-calendar" aria-hidden="true"></i> {nameOfMonth}
+        </h1>
+        <h1>{unitsConsumedLastMon} units</h1>
+        <hr />
+        <div className="paymentButton">
+          <button className="view-bill">VIEW BILL</button>
+          {!paymentStatus && <button className="Pay">PAY BILL</button>}
+        </div>
       </div>
     </div>
   );
