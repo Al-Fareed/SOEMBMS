@@ -8,6 +8,7 @@ import MainNavigation from "./Navigation/MainNavigation";
 import Home from "./Pages/Home";
 import Buy from "./Pages/Buy";
 import Sell from "./Pages/Sell";
+import NewMeter from "./Pages/NewMeter";
 function App() {
   return (
     <main>
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/Buy" exact>
             <Buy />
+          </Route>
+          <Route path="/New" exact>
+            <NewMeter />
           </Route>
           <Redirect to="/" />
         </Switch>

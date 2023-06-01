@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Charts from "./Contents/Charts";
 import Gauge from "./Contents/Gauge";
+import { NavLink } from "react-router-dom/cjs/react-router-dom";
 import "./Home.css";
 const Home = () => {
-  const [loggedIn] = useState(true);
+  // const [loggedIn] = useState(true);
   const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const years = [
     { year: 2012, values: [457, 407, 446, 280, 399, 412, 290, 326, 226, 356, 453, 420] },
@@ -64,12 +65,14 @@ console.log('Month', nameOfMonth);
   
   return (
     <div className="home">
-      {!loggedIn && 
+ 
         <div className="applyLink">
-          Request for Smart meter
-          <button className="smart-meter-button">Apply</button>
+          <p>
+          <i class="fa-solid fa-circle-info fa-2xl"></i>
+          &nbsp; Application for new Smart Meter</p>
+          <NavLink to='/New'><button className="smart-meter-button">Apply</button> </NavLink>
         </div>
-      }
+      
       <div className="yearly-chart">
         <Charts
           categories={years.map((item) => item.year)}
