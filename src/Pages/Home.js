@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import Charts from "./Contents/Charts";
 import Gauge from "./Contents/Gauge";
 import "./Home.css";
@@ -40,7 +40,7 @@ const Home = () => {
      return sum;
     });
     const avgUnitsPerMonth = sumForAvg / (years.length * 12);
- 
+    
   return (
     <div className="home">
       {!loggedIn && (
@@ -50,7 +50,7 @@ const Home = () => {
         </div>
       )}
       <div className="yearly-chart">
-        <Charts categories={years.map((item)=>item.year)} data={unitsPerYear} />
+        <Charts categories={years.map((item) => item.year)} data={unitsPerYear} />
       </div>
       <div className="monthly-chart">
         <div className="year-container">
@@ -67,12 +67,10 @@ const Home = () => {
         <Charts categories={month} data={selectedYearValues} />
       </div>
       <div className="avgUnitsPerMon">
-          
-        <Gauge/>
+        <Gauge />
         <h3>{Math.round(avgUnitsPerMonth)} units</h3>
         <h2>Average Units per Month </h2>
       </div>
-      
     </div>
   );
 };
