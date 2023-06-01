@@ -10,11 +10,11 @@
     visibility: hidden;
     width: 120px;
     background-color: rgba(0, 0, 0, 0.649);
-    color: #666565;
+    color: #000000;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-    background-color: rgba(255, 255, 0, 0.482);
+    background-color: rgba(255, 255, 0, 0.375);
     /* Position the tooltip */
     position: absolute;
     z-index: 1;

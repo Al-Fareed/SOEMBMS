@@ -14,7 +14,7 @@ const NavLinks = (props) => {
             <NavLink to='/Buy' exact>BUY</NavLink>
         </li>
         <li>
-            <button >LOG OUT</button>
+        <NavLink to='/logout' exact>LOG OUT</NavLink>
         </li> 
     </ul>
   );
