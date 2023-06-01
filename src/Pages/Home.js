@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Charts from "./Contents.js/Charts";
-import Gauge from "./Contents.js/Gauge";
+import Charts from "./Contents/Charts";
+import Gauge from "./Contents/Gauge";
 import "./Home.css";
 const Home = () => {
   const [loggedIn] = useState(true);
