@@ -50,3 +50,17 @@
     text-transform: capitalize;
     text-align: center;
 }
+.lastMonth{
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.yearly-chart:hover,
+.monthly-chart:hover,
+.avgUnitsPerMon:hover,
+.lastMonth:hover{
+    box-shadow: 5px 10px grey;
+}
