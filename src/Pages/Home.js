@@ -100,13 +100,14 @@ console.log('Month', nameOfMonth);
       </div>
 
       <div className="lastMonth">
-        <h2>Units consumed Last Month</h2>
+        <h2>Units Consumed Last Month</h2>
         <hr />
-              <h1>{nameOfMonth}</h1>
+          <h1><i class="fa fa-calendar" aria-hidden="true"></i> {nameOfMonth}</h1>
           <h1>{unitsConsumedLastMon} units</h1> 
+          <hr />
           <div className="paymentButton">
-            <button>View Bill</button>
-            {!paymentStatus && <button>Pay</button>}
+            <button className="view-bill">VIEW BILL</button>
+            {!paymentStatus && <button className="Pay">PAY BILL</button>}
           </div>
       </div>
     </div>

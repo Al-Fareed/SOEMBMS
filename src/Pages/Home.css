@@ -66,3 +66,44 @@
 .lastMonth:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+.lastMonth:hover
+{
+    background-color: rgb(13, 13, 13);
+    color: white;
+}
+.lastMonth:hover 
+hr{
+    background-color: white;
+}
+.paymentButton{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+.paymentButton button{
+    padding: 10px;
+    outline: none;
+    /* border: none; */
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: Ralewayu;
+}
+.paymentButton button:hover{
+    background-color: #f8df00;
+}
+hr{
+    background-color: black;
+    height: 5px;
+}
+.lastMonth hr:hover{
+    background-color: #f8df00;
+    color: #f8df00;
+}
+.lastMonth h1:hover,
+.lastMonth h2:hover,
+.lastMonth i:hover{
+    color: #f8df00;
+}
+.lastMonth hr:hover{
+    border-color: #f8df00;
+}
