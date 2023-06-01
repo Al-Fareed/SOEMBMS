@@ -35,15 +35,12 @@ const Home = () => {
 
   // to calculate total units in each year
   let sumForAvg=0;
-  let avgUnitsPerMonth;
   const unitsPerYear = years.map((yearData) => {
     const sum = yearData.values.reduce((accumulator, value) => accumulator + value, 0);
-     sumForAvg = sum + sumForAvg;
-     avgUnitsPerMonth = sumForAvg/((years.length)*12);
+     sumForAvg += sum;
      return sum;
     });
-    console.log('average units per month', avgUnitsPerMonth);
-  
+    const avgUnitsPerMonth = sumForAvg / (years.length * 12);
  
   return (
     <div className="home">
