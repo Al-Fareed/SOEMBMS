@@ -19,20 +19,34 @@ const Home = () => {
     { year: 2022, values: [166, 265, 294, 242, 212, 192, 199, 180, 298, 279, 305, 285] },
     { year: 2023, values: [416, 195, 308, 239, 350] },
   ];
-
+  const [paymentStatus] = useState(false);
   const reversedYear = years.map((item) => item.year).reverse();
-  const lastYear = years[years.length - 1].year;
+  const currentYear = years[years.length - 1].year;
 
-  const [selectedYear, setSelectedYear] = useState(lastYear);
+  const [selectedYear, setSelectedYear] = useState(currentYear);
 
   const handleYearChange = (event) => {
     setSelectedYear(event.target.value);
   };
   // to the values of last arrays last values, representing previous month units consumed 
-  const thisYearValues = years.find((item)=> item.year === lastYear)?.values || [];
+  const thisYearValues = years.find((item)=> item.year === currentYear)?.values || [];
   const unitsConsumedLastMon = thisYearValues[thisYearValues.length-1];
-  console.log('lastMonth', unitsConsumedLastMon);
   
+  const nameOfMonth = thisYearValues.length === 1 ? 'Jan'
+                      : thisYearValues.length === 2 ? 'Feb'
+                      : thisYearValues.length === 3 ? 'Mar'
+                      : thisYearValues.length === 4 ? 'Apr'
+                      : thisYearValues.length === 5 ? 'May'
+                      : thisYearValues.length === 6 ? 'Jun'
+                      : thisYearValues.length === 7 ? 'Jul'
+                      : thisYearValues.length === 8 ? 'Aug'
+                      : thisYearValues.length === 9 ? 'Sep'
+                      : thisYearValues.length === 10 ? 'Oct'
+                      : thisYearValues.length === 11 ? 'Nov'
+                      : 'Dec';
+console.log('Month', nameOfMonth);
+
+
   const selectedYearValues =
     years.find((item) => item.year === parseInt(selectedYear))?.values || [];
 
@@ -81,15 +95,18 @@ const Home = () => {
         value={avgUnitsPerMonth} 
         />
         <h3>{avgUnitsPerMonth} units</h3>
+        <hr />
         <h2>Average Units per Month </h2>
       </div>
 
       <div className="lastMonth">
         <h2>Units consumed Last Month</h2>
-          <p>{unitsConsumedLastMon} units</p> 
+        <hr />
+              <h1>{nameOfMonth}</h1>
+          <h1>{unitsConsumedLastMon} units</h1> 
           <div className="paymentButton">
             <button>View Bill</button>
-            <button>Pay</button>
+            {!paymentStatus && <button>Pay</button>}
           </div>
       </div>
     </div>
