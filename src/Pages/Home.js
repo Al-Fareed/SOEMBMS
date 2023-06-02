@@ -68,8 +68,8 @@ console.log('Month', nameOfMonth);
  
         <div className="applyLink">
           <p>
-          <i class="fa-solid fa-circle-info fa-2xl"></i>
-          &nbsp; Application for new Smart Meter</p>
+          <i className="fa-solid fa-circle-info fa-2xl"></i>
+          &nbsp; <div>Application for new Smart Meter</div></p>
           <NavLink to='/New'><button className="smart-meter-button">Apply</button> </NavLink>
         </div>
       
@@ -105,7 +105,7 @@ console.log('Month', nameOfMonth);
       <div className="lastMonth">
         <h2>Units Consumed Last Month</h2>
         <hr />
-          <h1><i class="fa fa-calendar" aria-hidden="true"></i> {nameOfMonth}</h1>
+          <h1><i className="fa fa-calendar" aria-hidden="true"></i> {nameOfMonth}</h1>
           <h1>{unitsConsumedLastMon} units</h1> 
           <hr />
           <div className="paymentButton">

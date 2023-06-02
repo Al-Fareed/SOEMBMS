@@ -34,8 +34,18 @@
     padding: 10px;
     margin:0px 5px 10px 5px;
     display: flex;
+    flex-wrap:nowrap;
     font-weight: 700;
     height: 100%;
+}
+.applyLink p{
+    display: flex;
+}
+p i{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: center;
 }
 .smart-meter-button{
     margin: 0px 0px 0px 5px;

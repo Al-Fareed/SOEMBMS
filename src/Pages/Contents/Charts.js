@@ -1,7 +1,6 @@
 import React from "react";
 import Chart from "react-apexcharts";
 import './Chart.css'
-// import { useState } from "react";
 const Charts = (props) => {
   const state = {
     options: {
