@@ -88,6 +88,7 @@ p i{
     margin-top: 15px;
     border-radius: 5px;
     height: fit-content;
+    user-select: none;
 }
 
 .yearly-chart:hover,
