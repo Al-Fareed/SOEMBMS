@@ -35,7 +35,10 @@ function App() {
             <NewMeter />
           </Route>
           <Route path="/logout" exact>
-            <Login />
+            <Login 
+              loggedIn={loggedIn}
+              setLoggedIn={setLoggedIn}
+            />
           </Route>
           
           <Redirect to="/" />

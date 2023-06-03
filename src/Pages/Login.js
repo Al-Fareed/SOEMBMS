@@ -1,9 +1,8 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-const Login = () => {
+const Login = (props) => {
     const handleLogin = (event) => {
-        console.log('');
-        
+        props.setLoggedIn(!props.loggedIn);      
     }
   return (
     <NavLink to='/Home'><button onClick={handleLogin}>Login</button></NavLink>
