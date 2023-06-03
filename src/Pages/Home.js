@@ -45,7 +45,6 @@ const Home = () => {
                       : thisYearValues.length === 10 ? 'Oct'
                       : thisYearValues.length === 11 ? 'Nov'
                       : 'Dec';
-console.log('Month', nameOfMonth);
 
 
   const selectedYearValues =
@@ -63,13 +62,16 @@ console.log('Month', nameOfMonth);
   });
   const avgUnitsPerMonth = Math.round(sumForAvg / (years.length * 12));
   
+  const paymentHandler = () => {
+    alert('This option is no available right now');
+  }
   return (
     <div className="home">
  
         <div className="applyLink">
-          <p>
+          <div>
           <i className="fa-solid fa-circle-info fa-2xl"></i>
-          &nbsp; <div>Application for new Smart Meter</div></p>
+          &nbsp; </div><div className="application-note">Application for new Smart Meter</div>
           <NavLink to='/New'><button className="smart-meter-button">Apply</button> </NavLink>
         </div>
       
@@ -106,11 +108,11 @@ console.log('Month', nameOfMonth);
         <h2>Units Consumed Last Month</h2>
         <hr />
           <h1><i className="fa fa-calendar" aria-hidden="true"></i> {nameOfMonth}</h1>
-          <h1>{unitsConsumedLastMon} units</h1> 
+          <h1>{unitsConsumedLastMon} units - {Math.round(unitsConsumedLastMon*8.20)} INR</h1> 
           <hr />
           <div className="paymentButton">
             <button className="view-bill">VIEW BILL</button>
-            {!paymentStatus && <button className="Pay">PAY BILL</button>}
+            {!paymentStatus && <button onClick={paymentHandler} className="Pay">PAY BILL</button>}
           </div>
       </div>
     </div>
