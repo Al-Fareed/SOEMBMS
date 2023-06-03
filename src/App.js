@@ -18,6 +18,7 @@ function App() {
       <Router>
         <MainNavigation 
           loggedIn={loggedIn}
+          setLoggedIn={setLoggedIn}
         />
         <Switch>
           <Route path="/" exact>

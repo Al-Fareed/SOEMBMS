@@ -2,7 +2,10 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 const Login = (props) => {
     const handleLogin = (event) => {
-        props.setLoggedIn(!props.loggedIn);      
+        if(!props.loggedIn)
+        {
+            props.setLoggedIn(true);
+        }      
     }
   return (
     <NavLink to='/Home'><button onClick={handleLogin}>Login</button></NavLink>

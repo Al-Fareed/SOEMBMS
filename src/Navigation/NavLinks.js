@@ -4,7 +4,8 @@ import { NavLink } from 'react-router-dom';
 const NavLinks = (props) => {
   const loginState = props.loggedIn?"LOG OUT" :"LOG IN";
   const handleLogOut = (event) => {
-
+    if(props.loggedIn)
+    props.setLoggedIn(false);
   }
   return (
     <ul className='nav-links'>

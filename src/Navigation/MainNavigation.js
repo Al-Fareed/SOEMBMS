@@ -43,6 +43,7 @@ const MainNavigation = (props) => {
         <nav className="main-navigation__header-nav">
           <NavLinks 
             loggedIn={props.loggedIn}
+            setLoggedIn={props.setLoggedIn}
           />
         </nav>
       </MainHeader>
