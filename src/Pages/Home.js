@@ -4,7 +4,7 @@ import Gauge from "./Contents/Gauge";
 import { NavLink } from "react-router-dom/cjs/react-router-dom";
 import "./Home.css";
 const Home = () => {
-  // const [loggedIn] = useState(true);
+  const [loggedIn] = useState(false);
   const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const years = [
     { year: 2012, values: [457, 407, 446, 280, 399, 412, 290, 326, 226, 356, 453, 420] },
@@ -20,7 +20,7 @@ const Home = () => {
     { year: 2022, values: [166, 265, 294, 242, 212, 192, 199, 180, 298, 279, 305, 285] },
     { year: 2023, values: [416, 195, 308, 239, 350] },
   ];
-  const [paymentStatus] = useState(false);
+  const [paymentStatus] = useState(true);
   const reversedYear = years.map((item) => item.year).reverse();
   const currentYear = years[years.length - 1].year;
 
@@ -75,13 +75,13 @@ const Home = () => {
           <NavLink to='/New'><button className="smart-meter-button">Apply</button> </NavLink>
         </div>
       
-      <div className="yearly-chart">
+      {loggedIn && <div className="yearly-chart">
         <Charts
           categories={years.map((item) => item.year)}
           data={unitsPerYear}
         />
-      </div>
-      <div className="monthly-chart">
+      </div> }
+      {loggedIn &&<div className="monthly-chart">
         <div className="year-container">
           Select the year:&nbsp;
           <select name="" id="" onChange={handleYearChange}>
@@ -94,17 +94,16 @@ const Home = () => {
         </div>
         <hr />
         <Charts categories={month} data={selectedYearValues} />
-      </div>
-      <div className="avgUnitsPerMon">
+      </div>}
+      {loggedIn &&<div className="avgUnitsPerMon">
         <Gauge
         value={avgUnitsPerMonth} 
         />
         <h3>{avgUnitsPerMonth} units</h3>
         <hr />
         <h2>Average Units per Month </h2>
-      </div>
-
-      <div className="lastMonth">
+      </div>}
+      {loggedIn &&<div className="lastMonth">
         <h2>Units Consumed Last Month</h2>
         <hr />
           <h1><i className="fa fa-calendar" aria-hidden="true"></i> {nameOfMonth}</h1>
@@ -114,7 +113,7 @@ const Home = () => {
             <button className="view-bill">VIEW BILL</button>
             {!paymentStatus && <button onClick={paymentHandler} className="Pay">PAY BILL</button>}
           </div>
-      </div>
+      </div>}
     </div>
   );
 };
