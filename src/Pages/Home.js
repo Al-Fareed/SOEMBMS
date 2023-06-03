@@ -3,8 +3,8 @@ import Charts from "./Contents/Charts";
 import Gauge from "./Contents/Gauge";
 import { NavLink } from "react-router-dom/cjs/react-router-dom";
 import "./Home.css";
-const Home = () => {
-  const [loggedIn] = useState(false);
+const Home = (props) => {
+  // const [props.loggedIn] = useState(false);
   const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const years = [
     { year: 2012, values: [457, 407, 446, 280, 399, 412, 290, 326, 226, 356, 453, 420] },
@@ -75,13 +75,13 @@ const Home = () => {
           <NavLink to='/New'><button className="smart-meter-button">Apply</button> </NavLink>
         </div>
       
-      {loggedIn && <div className="yearly-chart">
+      {props.loggedIn && <div className="yearly-chart">
         <Charts
           categories={years.map((item) => item.year)}
           data={unitsPerYear}
         />
       </div> }
-      {loggedIn &&<div className="monthly-chart">
+      {props.loggedIn &&<div className="monthly-chart">
         <div className="year-container">
           Select the year:&nbsp;
           <select name="" id="" onChange={handleYearChange}>
@@ -95,7 +95,7 @@ const Home = () => {
         <hr />
         <Charts categories={month} data={selectedYearValues} />
       </div>}
-      {loggedIn &&<div className="avgUnitsPerMon">
+      {props.loggedIn &&<div className="avgUnitsPerMon">
         <Gauge
         value={avgUnitsPerMonth} 
         />
@@ -103,7 +103,7 @@ const Home = () => {
         <hr />
         <h2>Average Units per Month </h2>
       </div>}
-      {loggedIn &&<div className="lastMonth">
+      {props.loggedIn &&<div className="lastMonth">
         <h2>Units Consumed Last Month</h2>
         <hr />
           <h1><i className="fa fa-calendar" aria-hidden="true"></i> {nameOfMonth}</h1>

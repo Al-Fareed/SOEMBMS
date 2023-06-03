@@ -41,7 +41,9 @@ const MainNavigation = (props) => {
           <Link to="/">E-Billing and Tracking</Link>
         </h1>
         <nav className="main-navigation__header-nav">
-          <NavLinks />
+          <NavLinks 
+            loggedIn={props.loggedIn}
+          />
         </nav>
       </MainHeader>
     </React.Fragment>

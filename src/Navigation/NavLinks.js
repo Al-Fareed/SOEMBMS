@@ -2,6 +2,10 @@ import React from 'react'
 import './NavLinks.css';
 import { NavLink } from 'react-router-dom';
 const NavLinks = (props) => {
+  const loginState = props.loggedIn?"LOG OUT" :"LOG IN";
+  const handleLogOut = (event) => {
+
+  }
   return (
     <ul className='nav-links'>
         <li>
@@ -14,7 +18,7 @@ const NavLinks = (props) => {
             <NavLink to='/Buy' exact>BUY</NavLink>
         </li>
         <li>
-        <NavLink to='/logout' exact>LOG OUT</NavLink>
+        <NavLink  to='/logout' onClick={handleLogOut} exact>{loginState}</NavLink>
         </li> 
     </ul>
   );
