@@ -125,6 +125,7 @@ const Home = (props) => {
     alert("This option is no available right now");
   };
   return (
+    <React.Fragment>
     <div className="home">
       <div className="applyLink">
         <div>
@@ -188,8 +189,10 @@ const Home = (props) => {
           </div>
         </React.Fragment>
       ): //if the user is not logged in render ads page
-      <Ads/>}
+     ""}
     </div>
+    {!props.loggedIn && <Ads/>}
+    </React.Fragment>
   );
 };
 
