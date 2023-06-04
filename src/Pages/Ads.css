@@ -1,5 +1,7 @@
-.img{
+img{
     height: 500px;
+    max-width:700px ;
+    border-radius: 10px;
 }
 .right{
     float: right;
@@ -15,7 +17,7 @@
     padding: 15px;
     height: fit-content;
     border-radius: 10px;
-    margin-left: 10px;
+    margin: 10px;
 }
 .obj-desc{
     float: left;
@@ -29,4 +31,7 @@ li{
 }
 .objectives img{
     float: right;
+}
+.objectives{
+    margin: 10px;
 }
