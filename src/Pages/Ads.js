@@ -35,8 +35,7 @@ const Ads = () => {
 
   return (
     <React.Fragment>
-      <div className="about">
-        
+      <div className="about main">
         <div className="about-description" >
         <h2>About SOEBMS</h2>
           The Smart Online Electricity Billing Management System (SOEBMS) <br />{" "}
@@ -44,7 +43,7 @@ const Ads = () => {
           insight to track power consumption of each consumers.
         </div>
       </div>
-        <div className="objectives">
+        <div className="objectives main">
         <div className="obj-desc ">
         <h1>Why SOEBMS</h1>
         <ul>
@@ -57,8 +56,8 @@ const Ads = () => {
         </ul>
         </div>
       </div>
-      {/*<div ref={automatedMeterReadingRef} className="automated-meter-reading">
-        <img  src={require("../images/Automate.jpg")} alt="" />
+      <div ref={automatedMeterReadingRef} className="automated-meter-reading main">
+        {/* <img  src={require()} alt="" /> */}
         <div className="auto-mtr-read-desc">
         <h1>Automated meter reading</h1>
         To overcome traditional approach of reading and billing of consumption
@@ -66,13 +65,14 @@ const Ads = () => {
         smart metering technology to enable real-time monitoring and generation
         of bill.
         </div>
-      </div> */}
-      {/*<div ref={tradingRef} className="trading">
+      </div> 
+      <div ref={tradingRef} className="trading main">
+        <div className="trading-desc">
         <h1>Electricity Trading</h1>
-        <img className="img right" src={require("../images/Buy-sell.avif")} alt="" />A consumer who
-        has more than sufficient electricity can sell electricity as well as
+        A consumer who has more than sufficient electricity can sell electricity as well as
         other user in this application can buy the listed users willing to sell
         their un consumed electricity.
+        </div>
       </div>
       {/*<div ref={InsightRef}>
       <img className="img" src={require("../images/meter-reading.jpg")} alt="" />
