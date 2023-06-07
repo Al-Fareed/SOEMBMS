@@ -1,24 +1,45 @@
-img{
+/* img{
     height: 500px;
     max-width:700px ;
     border-radius: 10px;
-}
+} */
 .right{
     float: right;
 }
 .left{
     float: left;
 }
-.about{
+.about {
     display: flex;
-}
-.about-description{
-    background-color: white;
+    background-image: url('https://konicaminoltaau.imgix.net/getmedia/db355129-0bb6-45df-a181-6b4db47885d3/Automation-blog.jpg?width=670&auto=format');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    flex-wrap: wrap;
+  }
+  
+  .about-description {
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 15px;
-    height: fit-content;
     border-radius: 10px;
     margin: 10px;
-}
+    color: white;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .about-description {
+      width: 80%;
+      margin: 10px auto;
+    }
+  }
+  
 .obj-desc{
     float: left;
     background-color: white;
@@ -33,5 +54,19 @@ li{
     float: right;
 }
 .objectives{
+    margin: 10px;
+}
+
+.automated-meter-reading img{
+    margin: 10px;
+    max-width: 700px;
+}
+
+.auto-mtr-read-desc{
+    background-color: white;
+    max-width: 450px;
+    padding: 10px;
+    border-radius: 5px;
+    float: right;
     margin: 10px;
 }

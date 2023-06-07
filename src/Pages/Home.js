@@ -180,7 +180,7 @@ const Home = (props) => {
             <hr />
             <div className="paymentButton">
               <button className="view-bill">VIEW BILL</button>
-              {!paymentStatus && (
+              {paymentStatus && (
                 <button onClick={paymentHandler} className="Pay">
                   PAY BILL
                 </button>
