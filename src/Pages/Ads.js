@@ -51,7 +51,9 @@ const Ads = () => {
               Automated meter reading and accurate billing
             </li>
             <li onClick={scrollToTrading}>Electricity trading</li>
-            <li onClick={scrollToInsight}>Insight on Electricity consumption</li>
+            <li onClick={scrollToInsight}>
+              Insight on Electricity consumption
+            </li>
             <li onClick={scrollToEnhancedSecurity}>Enhanced security</li>
           </ul>
         </div>
@@ -77,21 +79,23 @@ const Ads = () => {
         </div>
       </div>
       <div ref={InsightRef} className="insight main">
-       
         <div className="insight-desc">
           <h1>Insight on electricity consumption</h1>
-          Real-time display of power consumption for customers to track their energy usage.
-Historical data storage and visualization to allow users to analyze their energy consumption patterns.
+          Real-time display of power consumption for customers to track their
+          energy usage. Historical data storage and visualization to allow users
+          to analyze their energy consumption patterns.
         </div>
       </div>
 
       <div ref={enhancedSecurityRef} className="enhanced-security main">
-        <h1>Enhanced Security</h1>
-        Main key feature of this application is enhanced security. The system
-        employs blockchain technology to enhance security, ensuring secure
-        transactions, protecting data integrity, and providing reliable user
-        authentication.
-      </div> 
+        <div className="security-desc">
+          <h1>Enhanced Security</h1>
+          Main key feature of this application is enhanced security. The system
+          employs blockchain technology to enhance security, ensuring secure
+          transactions, protecting data integrity, and providing reliable user
+          authentication.
+        </div>
+      </div>
     </React.Fragment>
   );
 };
