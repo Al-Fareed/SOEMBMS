@@ -113,12 +113,12 @@
 }
   .trading{
     background-image: url('../images/Buy-sell.avif');
-    background-size: auto 100%;
-    background-color: rgb(14, 14, 14);
-    background-repeat: no-repeat;
-    background-color: rgba(255, 255, 255, 0.774);
-    padding: 10px;
-    display: flex;
+      background-size: auto 100%;
+      background-color: rgb(14, 14, 14);
+      background-repeat: no-repeat;
+      background-color: rgba(255, 255, 255, 0.774);
+      padding: 10px;
+      display: flex;
   }
 
   .trading-desc{
@@ -176,10 +176,13 @@
     }
   }
   .enhanced-security{
-    background: fixed url('../images/Security.png') no-repeat ;
+    background:  url('../images/Security.png') no-repeat ;
+    background-size: auto 100%;
+    background-color: rgb(14, 14, 14);
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.774);
     padding: 10px;
     display: flex;
-    background-size: cover;
   }
   .security-desc{
     background-color: rgba(15, 14, 14, 0.42);
@@ -191,8 +194,13 @@
     width: 50%;
     height: fit-content; 
   }
-  @media (max-width: 768px){
+
+   @media (min-width: 768px){
     .enhanced-security{
-      background-size: 100% 1500px;
+      background-position: left;
+    }
+    .security-desc{
+      margin-left: auto;
+      background-size: 100% auto ;
     }
   }
