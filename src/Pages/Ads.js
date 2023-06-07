@@ -45,8 +45,7 @@ const Ads = () => {
         </div>
       </div>
         <div className="objectives">
-        <img  src={require("../images/y.jpg")} alt="Why" />
-        <div className="obj-desc">
+        <div className="obj-desc ">
         <h1>Why SOEBMS</h1>
         <ul>
           <li onClick={scrollToAutomatedMeterReading}>
