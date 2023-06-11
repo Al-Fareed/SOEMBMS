@@ -141,7 +141,7 @@ const Home = (props) => {
           &nbsp;{" "}
         </div>
         <div className="application-note">I Love You Salwa </div>
-        <NavLink to="/New">
+        <NavLink to="">
           <button onClick={clickButn} className="smart-meter-button">Apply</button>{" "}
         </NavLink>
       </div>
