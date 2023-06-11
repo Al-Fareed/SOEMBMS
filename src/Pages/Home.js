@@ -124,25 +124,17 @@ const Home = (props) => {
   const paymentHandler = () => {
     alert("This option is no available right now");
   };
-  const clickButn = () => {
-    var s = prompt("Will You Marry Me?");
-    if(s){
-      alert("I Love You");
-    }else{
-      alert("Please.. :(");
-    }
-  }
   return (
     <React.Fragment>
     <div className="home">
       <div className="applyLink">
         <div>
-        <i class="fa-solid fa-heart"></i>
+          <i className="fa-solid fa-circle-info fa-2xl"></i>
           &nbsp;{" "}
         </div>
-        <div className="application-note">I Love You Salwa </div>
-        <NavLink to="">
-          <button onClick={clickButn} className="smart-meter-button">Apply</button>{" "}
+        <div className="application-note">Application for new Smart Meter</div>
+        <NavLink to="/New">
+          <button className="smart-meter-button">Apply</button>{" "}
         </NavLink>
       </div>
 
