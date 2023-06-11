@@ -8,7 +8,7 @@ const Login = (props) => {
         }      
     }
   return (
-    <NavLink to='/Home'><button onClick={handleLogin}>Login</button></NavLink>
+    <NavLink to='/home'><button onClick={handleLogin}>Login</button></NavLink>
   )
 }
 

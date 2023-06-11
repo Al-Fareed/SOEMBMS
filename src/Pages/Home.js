@@ -133,7 +133,7 @@ const Home = (props) => {
           &nbsp;{" "}
         </div>
         <div className="application-note">Application for new Smart Meter</div>
-        <NavLink to="/New">
+        <NavLink to="/new">
           <button className="smart-meter-button">Apply</button>{" "}
         </NavLink>
       </div>

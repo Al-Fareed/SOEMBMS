@@ -26,13 +26,13 @@ function App() {
               loggedIn={loggedIn}
             />
           </Route>
-          <Route path="/Sell" exact>
+          <Route path="/sell" exact>
             <Sell />
           </Route>
-          <Route path="/Buy" exact>
+          <Route path="/buy" exact>
             <Buy />
           </Route>
-          <Route path="/New" exact>
+          <Route path="/new" exact>
             <NewMeter />
           </Route>
           <Route path="/logout" exact>

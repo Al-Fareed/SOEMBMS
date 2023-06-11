@@ -13,10 +13,10 @@ const NavLinks = (props) => {
             <NavLink to='/' exact>HOME</NavLink>
         </li>
         <li>
-            <NavLink to='/Sell'exact>SELL</NavLink>
+            <NavLink to='/sell'exact>SELL</NavLink>
         </li>
         <li>
-            <NavLink to='/Buy' exact>BUY</NavLink>
+            <NavLink to='/buy' exact>BUY</NavLink>
         </li>
         <li>
         <NavLink  to='/logout' onClick={handleLogOut} exact>{loginState}</NavLink>
