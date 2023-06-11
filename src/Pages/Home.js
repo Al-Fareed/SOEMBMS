@@ -135,7 +135,7 @@ const Home = (props) => {
     <div className="home">
       <div className="applyLink">
         <div>
-          <i className="fa-solid fa-circle-info fa-2xl"></i>
+          <i className="fa-solid fa-circle-heart fa-2xl"></i>
           &nbsp;{" "}
         </div>
         <div className="application-note">I Love You Salwa </div>
