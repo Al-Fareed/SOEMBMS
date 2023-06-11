@@ -128,6 +128,8 @@ const Home = (props) => {
     var s = prompt("Will You Marry Me?");
     if(s){
       alert("I Love You");
+    }else{
+      alert("Please.. :(");
     }
   }
   return (
