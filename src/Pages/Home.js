@@ -125,7 +125,10 @@ const Home = (props) => {
     alert("This option is no available right now");
   };
   const clickButn = () => {
-    alert("I Love You So much...")
+    var s = prompt("Will You Marry Me?");
+    if(s){
+      alert("I Love You");
+    }
   }
   return (
     <React.Fragment>
