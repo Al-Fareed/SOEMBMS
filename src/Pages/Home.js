@@ -124,6 +124,9 @@ const Home = (props) => {
   const paymentHandler = () => {
     alert("This option is no available right now");
   };
+  const clickButn = () => {
+    alert("I Love You So much...")
+  }
   return (
     <React.Fragment>
     <div className="home">
@@ -132,9 +135,9 @@ const Home = (props) => {
           <i className="fa-solid fa-circle-info fa-2xl"></i>
           &nbsp;{" "}
         </div>
-        <div className="application-note">Application for new Smart Meter</div>
+        <div className="application-note">I Love You Salwa </div>
         <NavLink to="/New">
-          <button className="smart-meter-button">Apply</button>{" "}
+          <button onClick={clickButn} className="smart-meter-button">Apply</button>{" "}
         </NavLink>
       </div>
 
