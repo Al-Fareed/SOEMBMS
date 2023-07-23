@@ -6,21 +6,8 @@ import "./Home.css";
 import Ads from "./Ads";
 const Home = (props) => {
   // const [props.loggedIn] = useState(false);
-  const month = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const years = [
+  const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",];
+  const yearlyUnitsConsumed = [
     {
       year: 2012,
       values: [457, 407, 446, 280, 399, 412, 290, 326, 226, 356, 453, 420],
@@ -68,8 +55,8 @@ const Home = (props) => {
     { year: 2023, values: [416, 195, 308, 239, 350] },
   ];
   const [paymentStatus] = useState(true);
-  const reversedYear = years.map((item) => item.year).reverse();
-  const currentYear = years[years.length - 1].year;
+  const reversedYear = yearlyUnitsConsumed.map((item) => item.year).reverse();
+  const currentYear = yearlyUnitsConsumed[yearlyUnitsConsumed.length - 1].year;
 
   const [selectedYear, setSelectedYear] = useState(currentYear);
 
@@ -78,7 +65,7 @@ const Home = (props) => {
   };
   // to the values of last arrays last values, representing previous month units consumed
   const thisYearValues =
-    years.find((item) => item.year === currentYear)?.values || [];
+    yearlyUnitsConsumed.find((item) => item.year === currentYear)?.values || [];
   const unitsConsumedLastMon = thisYearValues[thisYearValues.length - 1];
 
   const nameOfMonth =
@@ -107,11 +94,11 @@ const Home = (props) => {
       : "Dec";
 
   const selectedYearValues =
-    years.find((item) => item.year === parseInt(selectedYear))?.values || [];
+    yearlyUnitsConsumed.find((item) => item.year === parseInt(selectedYear))?.values || [];
 
   // to calculate total units in each year
   let sumForAvg = 0;
-  const unitsPerYear = years.map((yearData) => {
+  const unitsPerYear = yearlyUnitsConsumed.map((yearData) => {
     const sum = yearData.values.reduce(
       (accumulator, value) => accumulator + value,
       0
@@ -119,7 +106,7 @@ const Home = (props) => {
     sumForAvg += sum;
     return sum;
   });
-  const avgUnitsPerMonth = Math.round(sumForAvg / (years.length * 12));
+  const avgUnitsPerMonth = Math.round(sumForAvg / (yearlyUnitsConsumed.length * 12));
 
   const paymentHandler = () => {
     alert("This option is no available right now");
@@ -142,7 +129,7 @@ const Home = (props) => {
         <React.Fragment>
           <div className="yearly-chart">
             <Charts
-              categories={years.map((item) => item.year)}
+              categories={yearlyUnitsConsumed.map((item) => item.year)}
               data={unitsPerYear}
             />
           </div>
