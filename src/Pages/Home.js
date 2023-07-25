@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Charts from "./Contents/Charts";
 import Gauge from "./Contents/Gauge";
 import { NavLink } from "react-router-dom/cjs/react-router-dom";
 import "./Home.css";
 import Ads from "./Ads";
+import axios from "axios";
+
 const Home = (props) => {
   // const [props.loggedIn] = useState(false);
   const month = [
@@ -20,62 +22,25 @@ const Home = (props) => {
     "Nov",
     "Dec",
   ];
-  const years = [
-    {
-      year: 2012,
-      values: [457, 407, 446, 280, 399, 412, 290, 326, 226, 356, 453, 420],
-    },
-    {
-      year: 2013,
-      values: [152, 361, 462, 438, 434, 325, 478, 235, 189, 243, 174, 261],
-    },
-    {
-      year: 2014,
-      values: [170, 192, 247, 251, 220, 263, 307, 295, 188, 166, 292, 223],
-    },
-    {
-      year: 2015,
-      values: [239, 300, 183, 281, 215, 205, 288, 239, 288, 271, 234, 242],
-    },
-    {
-      year: 2016,
-      values: [175, 207, 156, 225, 174, 240, 176, 196, 309, 182, 288, 162],
-    },
-    {
-      year: 2017,
-      values: [190, 265, 241, 187, 194, 167, 211, 248, 300, 252, 278, 191],
-    },
-    {
-      year: 2018,
-      values: [235, 309, 221, 201, 212, 185, 162, 235, 293, 231, 228, 238],
-    },
-    {
-      year: 2019,
-      values: [212, 229, 187, 283, 170, 272, 184, 191, 283, 183, 224, 150],
-    },
-    {
-      year: 2020,
-      values: [232, 238, 160, 167, 189, 167, 226, 266, 245, 173, 260, 263],
-    },
-    {
-      year: 2021,
-      values: [230, 167, 157, 228, 307, 275, 151, 247, 261, 259, 259, 296],
-    },
-    {
-      year: 2022,
-      values: [166, 265, 294, 242, 212, 192, 199, 180, 298, 279, 305, 285],
-    },
-    { year: 2023, values: [416, 195, 308, 239, 350] },
-  ];
+  const [years, setYears] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/")
+      .then((response) => setYears(response.data))
+      .catch((error) => console.log("Could not fetch data from Database", error));
+  }, []);
   const [paymentStatus] = useState(true);
-  const reversedYear = years.map((item) => item.year).reverse();
-  const currentYear = years[years.length - 1].year;
+  const currentYear = years.length > 0 ? years[years.length - 1].year : null;
+  const reversedYear = years.length > 0 ? years.map((item) => item.year).reverse() : [];
+  console.log("current year ", currentYear);
+  
+  const [selectedYear, setSelectedYear] = useState(currentYear ? currentYear : null);
 
-  const [selectedYear, setSelectedYear] = useState(currentYear);
-
-  const handleYearChange = (event) => {
-    setSelectedYear(event.target.value);
-  };
+console.log("Selected Year ", selectedYear);
+const handleYearChange = (event) => {
+  setSelectedYear(event.target.value);
+};
   // to the values of last arrays last values, representing previous month units consumed
   const thisYearValues =
     years.find((item) => item.year === currentYear)?.values || [];
@@ -146,6 +111,7 @@ const Home = (props) => {
               data={unitsPerYear}
             />
           </div>
+          {/* monthly cahrt */}
           <div className="monthly-chart">
             <div className="year-container">
               Select the year:&nbsp;
