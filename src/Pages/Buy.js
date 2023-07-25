@@ -1,45 +1,17 @@
-import React from "react";
-import './Buy.css';
+import React, { useState, useEffect } from "react";
+import "./Buy.css";
+import axios from "axios";
 const Buy = () => {
-  const sellers = [
-    {
-      name: "Mark",
-      Phone: "7348842781",
-      City: "Washington",
-      units: 230,
-    },
-    {
-      name: "Jack",
-      Phone: "8217789463",
-      City: "Mala",
-      units: 50,
-    },
-    {
-      name: "Mukesha",
-      Phone: "8217789463",
-      City: "Udupi",
-      units: 320,
-    },
-    {
-      name: "Birla",
-      Phone: "8217789463",
-      City: "Manipal",
-      units: 315,
-    },
-    {
-      name: "TATA",
-      Phone: "8217789463",
-      City: "Bangalore",
-      units: 250,
-    },
-    {
-      name: "Andrew Tate",
-      Phone: "8217789463",
-      City: "Karla",
-      units: 600,
-    },
-    
-  ];
+  const [sellers, setSellers] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/buy/")
+      .then((response) => setSellers(response.data))
+      .catch((error) =>
+        console.log("could not fetch data in msg from front-end", error)
+      );
+  });
+
   return (
     <div className="buy-page">
       <div className="heading">
@@ -49,9 +21,9 @@ const Buy = () => {
         <p>Action</p>
       </div>
       {sellers.map((seller) => (
-        <div className="user-container">
+        <div key={seller._id} className="user-container">
           <h3>{seller.name}</h3>
-          <p>{seller.City}</p>
+          <p>{seller.address}</p>
           <p>{seller.units} units</p>
           <div className="btn-container">
             <button className="btn-1">View</button>
