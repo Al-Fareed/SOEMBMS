@@ -1,39 +1,35 @@
 import React, { useState } from "react";
 import "./Sell.css";
 import ToolTip from "../FormElements/ToolTip";
-import Input from "../FormElements/Input";
+// import input from "../FormElements/input";
+import "../FormElements/Input.css";
 import axios from "axios";
 const Sell = () => {
-  const initialFormData = {
-    name: "",
-    email: "",
-    phone: "",
-    address: "",
-    units: "",
-  };
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [units, setUnits] = useState("");
 
-  const [formData, setFormData] = useState(initialFormData);
-
-  const handleChange = (event) => {
-    const { id, value } = event.target;
-    // console.log(`Updating ${id}`, value);
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [id]: value,
-    }));
-
+  const formData = {
+    name: name,
+    email: email,
+    phone: phone,
+    address: address,
+    units: units,
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
     axios
-    .post("http://localhost:8000/sell/post", formData)
-    .then((response) => {
-      // Handle the response from the backend if needed
-      console.log("Response from backend:", response.data);
-      alert('Your data has been successfully stored');
-      setFormData(initialFormData);
-      })
+      .post("http://localhost:8000/sell/post", formData)
+      .then(
+        setName(""),
+        setEmail(""),
+        setPhone(""),
+        setAddress(""),
+        setUnits("")
+      )
       .catch((error) => {
         console.error("Error posting sell data:", error);
       });
@@ -46,41 +42,41 @@ const Sell = () => {
           <h3>Sell Electricity</h3>
           <ToolTip message="Do you have unconsumed electricity? you can sell them in this page" />
         </div>
-        <Input
+        <input
           type="text"
           placeholder="Name"
           id="name"
-          value={formData.name}
-          changeHandle={handleChange}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
-        <Input
+        <input
           type="email"
           placeholder="E-mail"
           id="email"
-          value={formData.email}
-          changeHandle={handleChange}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
-        <Input
+        <input
           type="number"
           placeholder="Phone Number"
           id="phone"
-          value={formData.phone}
-          changeHandle={handleChange}
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
         />
-        <Input
+        <input
           type="textarea"
           placeholder="Address"
           row="3"
           id="address"
-          value={formData.address}
-          changeHandle={handleChange}
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
         />
-        <Input
+        <input
           type="number"
           placeholder="Number of Units"
           id="units"
-          value={formData.units}
-          changeHandle={handleChange}
+          value={units}
+          onChange={(e) => setUnits(e.target.value)}
         />
 
         <div className="buttons">
