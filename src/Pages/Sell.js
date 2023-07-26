@@ -42,42 +42,58 @@ const Sell = () => {
           <h3>Sell Electricity</h3>
           <ToolTip message="Do you have unconsumed electricity? you can sell them in this page" />
         </div>
-        <input
-          type="text"
-          placeholder="Name"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="email"
-          placeholder="E-mail"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Phone Number"
-          id="phone"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-        />
-        <input
-          type="textarea"
-          placeholder="Address"
-          row="3"
-          id="address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Number of Units"
-          id="units"
-          value={units}
-          onChange={(e) => setUnits(e.target.value)}
-        />
+
+        <div className="input-container">
+          <label className="placeholder-text" htmlFor=""></label>
+          <input
+            type="text"
+            placeholder="Name"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="input-container">
+          <label className="placeholder-text" htmlFor=""></label>
+          <input
+            type="email"
+            placeholder="E-mail"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="input-container">
+          <label className="placeholder-text" htmlFor=""></label>
+          <input
+            type="number"
+            placeholder="Phone Number"
+            id="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+        </div>
+        <div className="input-container">
+          <label className="placeholder-text" htmlFor=""></label>
+          <input
+            type="textarea"
+            placeholder="Address"
+            row="3"
+            id="address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+        </div>
+        <div className="input-container">
+          <label className="placeholder-text" htmlFor=""></label>
+          <input
+            type="number"
+            placeholder="Number of Units"
+            id="units"
+            value={units}
+            onChange={(e) => setUnits(e.target.value)}
+          />
+        </div>
 
         <div className="buttons">
           <button className="btn-submit" type="submit">
