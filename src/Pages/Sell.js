@@ -44,40 +44,36 @@ const Sell = () => {
         </div>
 
         <div className="input-container">
-          <label className="placeholder-text" htmlFor=""></label>
+          <label className="placeholder-text" htmlFor="name">Name</label>
           <input
             type="text"
-            placeholder="Name"
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className="input-container">
-          <label className="placeholder-text" htmlFor=""></label>
+          <label className="placeholder-text" htmlFor="email">E-mail</label>
           <input
             type="email"
-            placeholder="E-mail"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="input-container">
-          <label className="placeholder-text" htmlFor=""></label>
+          <label className="placeholder-text" htmlFor="phone">Phone Number</label>
           <input
             type="number"
-            placeholder="Phone Number"
             id="phone"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
         </div>
         <div className="input-container">
-          <label className="placeholder-text" htmlFor=""></label>
+          <label className="placeholder-text" htmlFor="address">Address</label>
           <input
             type="textarea"
-            placeholder="Address"
             row="3"
             id="address"
             value={address}
@@ -85,10 +81,9 @@ const Sell = () => {
           />
         </div>
         <div className="input-container">
-          <label className="placeholder-text" htmlFor=""></label>
+          <label className="placeholder-text" htmlFor="units">Number of Units</label>
           <input
             type="number"
-            placeholder="Number of Units"
             id="units"
             value={units}
             onChange={(e) => setUnits(e.target.value)}
