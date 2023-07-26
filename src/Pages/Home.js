@@ -7,7 +7,6 @@ import Ads from "./Ads";
 import axios from "axios";
 
 const Home = (props) => {
-  // const [props.loggedIn] = useState(false);
   const month = [
     "Jan",
     "Feb",
@@ -23,24 +22,30 @@ const Home = (props) => {
     "Dec",
   ];
   const [years, setYears] = useState([]);
+  const [selectedYear, setSelectedYear] = useState(null); 
 
   useEffect(() => {
     axios
       .get("http://localhost:8000/")
-      .then((response) => setYears(response.data))
+      .then((response) => {
+        setYears(response.data);
+        // Update selectedYear after fetching data and setting currentYear
+        setSelectedYear(response.data.length > 0 ? response.data[response.data.length - 1].year : null);
+      })
       .catch((error) => console.log("Could not fetch data from Database", error));
   }, []);
   const [paymentStatus] = useState(true);
   const currentYear = years.length > 0 ? years[years.length - 1].year : null;
   const reversedYear = years.length > 0 ? years.map((item) => item.year).reverse() : [];
-  console.log("current year ", currentYear);
-  
-  const [selectedYear, setSelectedYear] = useState(currentYear ? currentYear : null);
 
-console.log("Selected Year ", selectedYear);
-const handleYearChange = (event) => {
-  setSelectedYear(event.target.value);
-};
+
+  console.log("Selected Year ", selectedYear);
+  const selectedYearValues = years.find((item) => item.year === parseInt(selectedYear))?.values || [];
+  const handleYearChange = (event) => {
+    setSelectedYear(event.target.value);
+  };
+
+
   // to the values of last arrays last values, representing previous month units consumed
   const thisYearValues =
     years.find((item) => item.year === currentYear)?.values || [];
@@ -71,8 +76,6 @@ const handleYearChange = (event) => {
       ? "Nov"
       : "Dec";
 
-  const selectedYearValues =
-    years.find((item) => item.year === parseInt(selectedYear))?.values || [];
 
   // to calculate total units in each year
   let sumForAvg = 0;
@@ -111,7 +114,7 @@ const handleYearChange = (event) => {
               data={unitsPerYear}
             />
           </div>
-          {/* monthly cahrt */}
+          {/* monthly chart */}
           <div className="monthly-chart">
             <div className="year-container">
               Select the year:&nbsp;
@@ -124,14 +127,16 @@ const handleYearChange = (event) => {
               </select>
             </div>
             <hr />
-            <Charts categories={month} data={selectedYearValues} />
+            <Charts categories={month} data={selectedYearValues} /> {/*code to be checked*/}
           </div>
+
           <div className="avgUnitsPerMon">
             <Gauge value={avgUnitsPerMonth} />
             <h3>{avgUnitsPerMonth} units</h3>
             <hr />
             <h2>Average Units per Month </h2>
           </div>
+          
           <div className="lastMonth">
             <h2>Units Consumed Last Month</h2>
             <hr />

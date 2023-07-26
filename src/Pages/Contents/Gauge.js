@@ -9,6 +9,7 @@ const per = props.value/numOfLevels;
       <GaugeChart
         id="gauge-chart2"
         nrOfLevels={numOfLevels}
+        animate={false} 
         arcsLength={[0.25,0.25, 0.25, 0.25]}
         colors={["lightgreen", "yellow","orange", "red"]}
         cornerRadius={0}
