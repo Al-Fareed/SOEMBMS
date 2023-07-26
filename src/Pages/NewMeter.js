@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Sell.css";
 import ToolTip from "../FormElements/ToolTip";
 // import input from "../FormElements/input";
-import '../FormElements/Input.css'
+import "../FormElements/Input.css";
 import axios from "axios";
 
 const NewMeter = () => {
@@ -22,7 +22,7 @@ const NewMeter = () => {
       landmark: landmark,
     };
     axios
-      .post("http://localhost:8000/new",data)
+      .post("http://localhost:8000/new", data)
       .then(
         setName(""),
         setEmail(""),
@@ -40,42 +40,68 @@ const NewMeter = () => {
           <h3>Apply for New Meter</h3>
           <ToolTip message="Apply for new Smart-Meter to avail all the features of this application" />
         </div>
-        <input
-          type="text"
-          placeholder="Name"
-          id="name"
-          value={name}
-          onChange={(e)=>setName(e.target.value)}
-        />
+        <div className="input-container">
+          <label className="placeholder-text" htmlFor="name">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+
+        <div className="input-container">
+          <label className="placeholder-text" htmlFor="email">
+            E-mail
+          </label>
         <input
           type="email"
-          placeholder="E-mail"
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <input
+        </div>
+
+        <div className="input-container">
+          <label className="placeholder-text" htmlFor="phone">
+            Phone Number
+          </label>
+          <input
           type="number"
-          placeholder="Phone Number"
           id="phone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
-        <input
+          </div>
+           <div className="input-container">
+          <label className="placeholder-text" htmlFor="address">
+          Address
+          </label>
+          <input
           type="textarea"
-          placeholder="Address"
           row="3"
           id="address"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
         />
-        <input
+          </div> 
+
+          <div className="input-container">
+          <label className="placeholder-text" htmlFor="landmark">
+            Landmark
+          </label>
+          <input
           type="text"
-          placeholder="Land Mark"
           id="landmark"
           value={landmark}
           onChange={(e) => setLandmark(e.target.value)}
         />
+          </div>
+        
+        
+        
         <div className="buttons">
           <button className="btn-submit" type="submit">
             SUBMIT
