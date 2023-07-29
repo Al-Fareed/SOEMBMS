@@ -39,7 +39,6 @@ const Home = (props) => {
   const reversedYear = years.length > 0 ? years.map((item) => item.year).reverse() : [];
 
 
-  console.log("Selected Year ", selectedYear);
   const selectedYearValues = years.find((item) => item.year === parseInt(selectedYear))?.values || [];
   const handleYearChange = (event) => {
     setSelectedYear(event.target.value);

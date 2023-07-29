@@ -11,6 +11,7 @@ import Buy from "./Pages/Buy";
 import Sell from "./Pages/Sell";
 import NewMeter from "./Pages/NewMeter";
 import Login from "./Pages/Login";
+import BookElectricity from "./Pages/BookElectricity";
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route path="/new" exact>
             <NewMeter />
+          </Route>
+          <Route path="/book" exact>
+            <BookElectricity />
           </Route>
           <Route path="/logout" exact>
             <Login 
