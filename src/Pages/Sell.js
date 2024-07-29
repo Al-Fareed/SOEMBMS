@@ -18,7 +18,13 @@ const Sell = () => {
     address: address,
     units: units,
   };
-
+  const ResetForm = (event) => {
+    setName("");
+    setEmail("");
+    setPhone("");
+    setAddress("");
+    setUnits("");
+}
   const submitHandler = (event) => {
     event.preventDefault();
     axios
@@ -94,7 +100,7 @@ const Sell = () => {
           <button className="btn-submit" type="submit">
             SUBMIT
           </button>
-          <button className="btn-reset" type="reset">
+          <button className="btn-reset" type="reset" onClick={ResetForm}>
             RESET
           </button>
         </div>

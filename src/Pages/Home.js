@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom/cjs/react-router-dom";
 import "./Home.css";
 import Ads from "./Ads";
 import axios from "axios";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Home = (props) => {
   const month = [
@@ -88,8 +89,12 @@ const Home = (props) => {
   });
   const avgUnitsPerMonth = Math.round(sumForAvg / (years.length * 12));
 
-  const paymentHandler = () => {
-    alert("This option is no available right now");
+  const history = useHistory();
+  const paymentHandler = (units) => {
+    history.push({
+      pathname: "/pay",
+      state: units,
+    });
   };
   return (
     <React.Fragment>
@@ -151,7 +156,7 @@ const Home = (props) => {
             <div className="paymentButton">
               <button className="view-bill">VIEW BILL</button>
               {paymentStatus && (
-                <button onClick={paymentHandler} className="Pay">
+                <button onClick={()=>paymentHandler(unitsConsumedLastMon)} className="Pay">
                   PAY BILL
                 </button>
               )}

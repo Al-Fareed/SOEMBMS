@@ -12,6 +12,7 @@ import Sell from "./Pages/Sell";
 import NewMeter from "./Pages/NewMeter";
 import Login from "./Pages/Login";
 import BookElectricity from "./Pages/BookElectricity";
+import Payment from "./Pages/Payment";
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path="/book" exact>
             <BookElectricity />
+          </Route>
+           <Route path="/pay" exact>
+            <Payment />
           </Route>
           <Route path="/logout" exact>
             <Login 
